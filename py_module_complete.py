@@ -69,18 +69,18 @@ class PythonAutoCompletion(sublime_plugin.EventListener):
         self.on_settings_update()
         self.watch_settings()
 
-        super().__init__(*args, **kwargs)
+        super(PythonAutoCompletion, self).__init__(*args, **kwargs)
 
     def watch_settings(self):
         """Observe changes."""
         self.unwatch_settings()
-        self.settings.add_on_change('PyComplete-settings-listener', self.on_settings_update)
+        self._settings.add_on_change('PyComplete-settings-listener', self.on_settings_update)
 
     def unwatch_settings(self):
-        self.settings.clear_on_change('PyComplete-settings-listener')
+        self._settings.clear_on_change('PyComplete-settings-listener')
 
     def on_settings_update(self):
-        self._settings = self.load_settings('PyComplete.sublime-settings')
+        self._settings = sublime.load_settings('PyComplete.sublime-settings')
 
     def on_query_completions(self, view, prefix, locations):
         cursor = view.sel()[-1]
@@ -92,7 +92,7 @@ class PythonAutoCompletion(sublime_plugin.EventListener):
 
         # Grab the current path
         module_name = grab_module(view, cursor)
-        if module_name not in self._settings['modules']:
+        if module_name not in self._settings.get('modules'):
             return
 
         module = import_module(module_name)
