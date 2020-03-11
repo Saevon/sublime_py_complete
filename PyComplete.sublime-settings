@@ -1,0 +1,49 @@
+{
+    "modules": [
+        // Misc
+        "builtins",
+        "math",
+        "operator",
+        "random",
+        "re",
+        "shlex",
+        "subprocess",
+        "unittest",
+        "resource",
+
+        // Debug
+        "sys",
+        "os",
+        "os.path",
+        "path",
+        "shutil",
+        "inspect",
+        "logging",
+        "resource",
+        "struct",
+        "tempfile",
+        "traceback",
+        "pdb",
+
+        // Common
+        "datetime",
+        "time",
+        "codecs",
+        "string",
+        "getpass",
+        "decimal",
+
+        // Tools
+        "functools",
+        "itertools",
+        "collections",
+        "contextlib",
+
+        "json",
+
+        // External
+        //   Need to import somehow...
+        // "requests",
+        // "flask",
+    ]
+}

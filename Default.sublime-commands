@@ -1,0 +1,11 @@
+[
+    {
+        "caption": "Preferences: Python Module Autocompletion",
+        "command": "edit_settings",
+        "args": {
+            // Shows a comparison view
+            "base_file": "${packages}/sublime_pymoddule_complete/PyComplete.sublime-settings",
+            "default": "// PyComplete Settings - User\n{\n\t$0\n}\n"
+        }
+    }
+]
