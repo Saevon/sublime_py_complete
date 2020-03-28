@@ -41,6 +41,9 @@
 
         "json",
 
+        // Misc
+        "uuid",
+
         // External
         //   Need to import somehow...
         // "requests",
